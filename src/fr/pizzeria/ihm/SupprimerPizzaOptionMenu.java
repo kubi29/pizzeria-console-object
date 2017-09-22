@@ -1,16 +1,18 @@
-package fr.pizzeria.model;
+package fr.pizzeria.ihm;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SupprimerPizzaOptionMenu {
+import fr.pizzeria.dao.IPizzaDao;
+import fr.pizzeria.model.Pizza;
+
+public class SupprimerPizzaOptionMenu extends PizzeriaOptionMenu{
 	
-	public ArrayList <Pizza> array = new ArrayList<>();
+	IPizzaDao dao;
 	
-	public SupprimerPizzaOptionMenu(ArrayList <Pizza> array){
+	public SupprimerPizzaOptionMenu(IPizzaDao dao){
 		
 		
-		this.array = array;
+		this.dao = dao;
 		
 	}
 	
@@ -18,7 +20,7 @@ public class SupprimerPizzaOptionMenu {
 		
 		System.out.println("Suppression d’une pizza");
 		
-		for (Pizza pizza : array) {
+		for (Pizza pizza : dao.findAllPizzas()) {
 			System.out.println(pizza);
 		}
 		System.out.println("1 pour supprimer");
@@ -31,20 +33,9 @@ public class SupprimerPizzaOptionMenu {
 			System.out.println("Veuillez choisir la pizza à supprimer en indiquent son code");
 			
 			String codeASupprimmer = sc.next().trim().toUpperCase();
-			System.out.println(codeASupprimmer);
 			
-			for (Pizza pizza : array) {
-				
-				if(codeASupprimmer.equals(pizza.getCode())){
-					
-					array.remove(pizza);
-					
-				}
-				
-			}
-			
+			dao.deletePizza(codeASupprimmer);
+		
 		}
-
 	}
-
 }
