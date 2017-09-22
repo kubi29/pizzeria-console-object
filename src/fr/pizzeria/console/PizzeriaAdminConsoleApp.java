@@ -12,12 +12,7 @@ public class PizzeriaAdminConsoleApp {
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("***** Pizzeria Administration *****");
-		System.out.println("1. Lister les pizzas");
-		System.out.println("2. Ajouter une nouvelle pizza");
-		System.out.println("3. Mettre à jour une pizza");
-		System.out.println("4. Supprimer une pizza");
-		System.out.println("99. Sortir");
+		menu();
 		
 		int choix = sc.nextInt();
 		
@@ -113,16 +108,31 @@ public class PizzeriaAdminConsoleApp {
 			}else if (choix == 4){
 
 				System.out.println("Suppression d’une pizza");
+				
 				for (Pizza pizza : array) {
 					System.out.println(pizza);
 				}
 				
 				System.out.println("99 pour abandonner");
 				System.out.println("Veuillez choisir la pizza à supprimer");
-				int result = sc.nextInt();
-				if(result != 99){
+				
+				int choix1 = sc.nextInt();
+				
+				if(choix1 != 99){
+					System.out.println("Veuillez choisir la pizza à supprimer en indiquent son code");
+					String result = sc.next();
+					for (Pizza pizza : array) {
+						
+						if(result.equals(pizza.getCode())){
+							
+							array.remove(pizza);
+							
+						}
+					}
 					array.remove(result);
+					
 				}
+				
 				for (Pizza pizza : array) {
 					System.out.println(pizza);
 				}
@@ -148,5 +158,17 @@ public class PizzeriaAdminConsoleApp {
 		
 		
 	}
+	private static void menu(){
+		
+		System.out.println("***** Pizzeria Administration *****");
+		System.out.println("1. Lister les pizzas");
+		System.out.println("2. Ajouter une nouvelle pizza");
+		System.out.println("3. Mettre à jour une pizza");
+		System.out.println("4. Supprimer une pizza");
+		System.out.println("99. Sortir");
+		
+	}
+	
+	
 
 }
