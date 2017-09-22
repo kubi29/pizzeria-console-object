@@ -87,17 +87,21 @@ public class PizzeriaAdminConsoleApp {
 					System.out.println("Veuillez saisir le code de la pizza à modifier");
 					String result1 = sc.next();
 					
-					
-					
-					System.out.println("Veuillez saisir le code");
-					String code = sc.next() ;
-					System.out.println("Veuillez saisir le nom (sans espace)");
-					String nom =  sc.next();
-					System.out.println("Veuillez saisir le prix");
-					double prix = sc.nextDouble();
-					
-					Pizza p = new Pizza(code , nom, prix);
-					array.set(result ,p);
+					for (Pizza pizza : array) {
+						
+						if(result1.equals(pizza.getCode())){
+							System.out.println("Veuillez saisir le code");
+							String code = sc.next() ;
+							System.out.println("Veuillez saisir le nom (sans espace)");
+							String nom =  sc.next();
+							System.out.println("Veuillez saisir le prix");
+							double prix = sc.nextDouble();
+							pizza.setCode(code);
+							pizza.setNom(nom);
+							pizza.setPrix(prix);
+							
+						}
+					}
 					
 					for (Pizza pizza : array) {
 						System.out.println(pizza);
