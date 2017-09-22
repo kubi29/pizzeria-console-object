@@ -3,6 +3,10 @@ package fr.pizzeria.console;
 import java.util.Scanner;
 
 import fr.pizzeria.dao.PizzaDaoImpl;
+import fr.pizzeria.exception.DeletePizzaException;
+import fr.pizzeria.exception.SavePizzaException;
+import fr.pizzeria.exception.StockageException;
+import fr.pizzeria.exception.UpdatePizzaException;
 import fr.pizzeria.ihm.AjouterPizzaOptionMenu;
 import fr.pizzeria.ihm.ListerPizzasOptionMenu;
 import fr.pizzeria.ihm.ModifierPizzaOptionMenu;
@@ -12,7 +16,7 @@ public class PizzeriaAdminConsoleApp {
 
 	public static Scanner sc = new Scanner(System.in);
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
 		
@@ -25,38 +29,49 @@ public class PizzeriaAdminConsoleApp {
 		
 		do{
 			
-		
-			if(choix == 1){
+				
+				if(choix == 1){
 
-				
-				
-			}else if (choix == 2){
 
-				AjouterPizzaOptionMenu ajouter = new AjouterPizzaOptionMenu(array);
-				
-				ajouter.execute(sc);
-				
-				 
-			}else if (choix == 3){
-				
-				ModifierPizzaOptionMenu modifier = new ModifierPizzaOptionMenu(array);
-				
-				modifier.execute(sc);
-				
-				
-			}else if (choix == 4){
-				
-				SupprimerPizzaOptionMenu supprimer = new SupprimerPizzaOptionMenu(array);
-				
-				supprimer.execute(sc);
-				
-				
 
-			}else {
+				}else if (choix == 2){
 
-				System.out.println("Erreure de saisie");
+					AjouterPizzaOptionMenu ajouter = new AjouterPizzaOptionMenu(array);
 
-			}
+					try {
+						ajouter.execute(sc);
+					} catch (SavePizzaException e) {
+						System.out.println(e.getMessage());
+					}
+
+
+
+				}else if (choix == 3){
+
+					ModifierPizzaOptionMenu modifier = new ModifierPizzaOptionMenu(array);
+
+					try {
+						modifier.execute(sc);
+					} catch (UpdatePizzaException e) {
+						System.out.println(e.getMessage());
+					}
+
+
+				}else if (choix == 4){
+
+					SupprimerPizzaOptionMenu supprimer = new SupprimerPizzaOptionMenu(array);
+
+					try {
+						supprimer.execute(sc);
+					} catch (DeletePizzaException e) {
+						System.out.println(e.getMessage());
+					}
+
+
+
+				}
+				
+			
 			
 			ListerPizzasOptionMenu lister = new ListerPizzasOptionMenu(array);
 			
@@ -70,7 +85,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		System.out.println("Aurevoir ");
 		
-		
+	
 	}
 	private static void menu(){
 		

@@ -1,6 +1,5 @@
 package fr.pizzeria.ihm;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import fr.pizzeria.dao.IPizzaDao;

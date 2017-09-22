@@ -3,6 +3,7 @@ package fr.pizzeria.ihm;
 import java.util.Scanner;
 
 import fr.pizzeria.dao.IPizzaDao;
+import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.model.Pizza;
 
 public class SupprimerPizzaOptionMenu extends PizzeriaOptionMenu{
@@ -16,7 +17,7 @@ public class SupprimerPizzaOptionMenu extends PizzeriaOptionMenu{
 		
 	}
 	
-	public void execute (Scanner sc){
+	public void execute (Scanner sc) throws DeletePizzaException{
 		
 		System.out.println("Suppression d’une pizza");
 		
@@ -32,8 +33,10 @@ public class SupprimerPizzaOptionMenu extends PizzeriaOptionMenu{
 		if(choix1 != 99){
 			System.out.println("Veuillez choisir la pizza à supprimer en indiquent son code");
 			
-			String codeASupprimmer = sc.next().trim().toUpperCase();
-			
+			String codeASupprimmer = sc.next().toUpperCase();
+			if (codeASupprimmer.trim().isEmpty() || codeASupprimmer.length() != 3){
+				throw new DeletePizzaException("Veuiller renseigner le code a supprimer");
+			}
 			dao.deletePizza(codeASupprimmer);
 		
 		}
