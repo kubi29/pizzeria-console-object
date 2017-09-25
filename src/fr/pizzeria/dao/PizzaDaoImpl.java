@@ -13,7 +13,7 @@ public class PizzaDaoImpl implements IPizzaDao {
 	public PizzaDaoImpl() {
 		Pizza p1 = new Pizza("PEP" , "Pépéroni", 12.50, CategoriePizza.VIANDE );
 		Pizza p2 = new Pizza( "MAR" , "Margherita " , 14.00, CategoriePizza.SANS_VIANDE );
-		Pizza p3 = new Pizza( "REIN", "La Reine " , 11.50, CategoriePizza.VIANDE );
+		Pizza p3 = new Pizza( "REI", "La Reine " , 11.50, CategoriePizza.VIANDE );
 		Pizza p4 = new Pizza( "FRO" , "La 4 fromages" , 12.00, CategoriePizza.SANS_VIANDE);
 		Pizza p5 = new Pizza( "CAN" , "La cannibale" , 12.50, CategoriePizza.VIANDE);
 		Pizza p6 = new Pizza("SAV" , "La savoyarde" , 13.00, CategoriePizza.VIANDE);

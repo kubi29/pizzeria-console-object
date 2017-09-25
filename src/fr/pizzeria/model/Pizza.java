@@ -1,11 +1,19 @@
 package fr.pizzeria.model;
 
+import java.lang.reflect.Field;
+
 public class Pizza {
 
+	
+	
 	public Integer id;
+	@ToString (uppercase = true)
 	public String code;
+	@ToString (uppercase = true)
 	public String nom;
+	@ToString
 	public double prix;
+	@ToString
 	public CategoriePizza categoriePizza ;
 
 	static Integer increment = 0;
@@ -15,6 +23,7 @@ public class Pizza {
 	}
 	
 	public Pizza ( String code , String nom , double prix ,CategoriePizza categoriePizza){
+		
 		
 		setId(increment);
 		setCode(code);
@@ -66,7 +75,59 @@ public class Pizza {
 
 	@Override
 	public String toString() {
-		return "Pizza : " + code + "->" + nom + "(" + prix + ")" + " type : " + categoriePizza;
+		StringBuilder sb = new StringBuilder();
+		
+		Class<?> thisClass = null;
+		
+		try {
+			
+			
+			thisClass = Class.forName(this.getClass().getName());
+			
+			Field[] aClassFields = thisClass.getDeclaredFields();
+			
+			sb.append(this.getClass().getSimpleName() + " : ");
+			
+			for(Field f : aClassFields){
+				
+				String name = f.getName();
+				
+				if(f.getAnnotation(ToString.class).uppercase() ){
+					
+					System.out.println("qsdqsddqs");
+				
+				}
+				
+				if(f.isAnnotationPresent(ToString.class)){
+				
+					if(name.equals("code")){
+						sb.append(code  );
+					}
+
+					else if(name.equals("nom")){
+						sb.append(" -> " + nom );
+					}
+
+					else if(name.equals("prix")){
+						sb.append(" ( " + prix + " ) " );
+					}
+
+					else if(name.equals("categoriePizza")){
+						sb.append(" type : " + categoriePizza);
+					}
+				}
+				
+	        	      
+	        }
+			
+		}  catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+		
+		return sb.toString();
+
+			
 	}
 
 	
