@@ -3,8 +3,8 @@ package fr.pizzeria.ihm;
 import java.util.Scanner;
 
 import fr.pizzeria.dao.IPizzaDao;
-import fr.pizzeria.exception.SavePizzaException;
 import fr.pizzeria.exception.UpdatePizzaException;
+import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
 public class ModifierPizzaOptionMenu extends PizzeriaOptionMenu {
@@ -55,8 +55,31 @@ public class ModifierPizzaOptionMenu extends PizzeriaOptionMenu {
 					if(prix == 0){
 						throw new UpdatePizzaException("Le prix doit étre renseigner");
 					}
-					Pizza p = new Pizza(code , nom, prix);
-					dao.updatePizza(codeAModifier, p);
+					System.out.println("Veuillez choisir le type");
+					System.out.println("1 : Viande");
+					System.out.println("2 : Sans Viande");
+					System.out.println("3 : Poisson");
+					
+					int type = sc.nextInt();
+					
+					if(type == 1 ){
+						
+						
+						Pizza p = new Pizza(code , nom, prix, CategoriePizza.VIANDE);
+						dao.updatePizza(codeAModifier, p);
+						
+					}else if (type == 2) {
+						
+						Pizza p = new Pizza(code , nom, prix, CategoriePizza.SANS_VIANDE);
+						dao.updatePizza(codeAModifier, p);
+						
+					}else if (type == 3) {
+						
+						Pizza p = new Pizza(code , nom, prix, CategoriePizza.POISSON);
+						dao.updatePizza(codeAModifier, p);
+						
+					}
+					
 					
 				}
 			}

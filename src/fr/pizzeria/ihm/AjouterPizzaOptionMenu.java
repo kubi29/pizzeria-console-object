@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import fr.pizzeria.dao.IPizzaDao;
 import fr.pizzeria.exception.SavePizzaException;
+import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
 public class AjouterPizzaOptionMenu extends PizzeriaOptionMenu{
@@ -42,10 +43,36 @@ public class AjouterPizzaOptionMenu extends PizzeriaOptionMenu{
 			throw new SavePizzaException("Le prix doit étre renseigner");
 		}
 		
-		if(!dao.saveNewPizza(new Pizza(code.toUpperCase(), nom, prix))){
+		System.out.println("Veuillez choisir le type");
+		System.out.println("1 : Viande");
+		System.out.println("2 : Sans Viande");
+		System.out.println("3 : Poisson");
+		
+		int type = sc.nextInt();
+		
+		if(type == 1 ){
+			
+			if(!dao.saveNewPizza(new Pizza(code.toUpperCase(), nom, prix, CategoriePizza.VIANDE))){
 
-			throw new SavePizzaException("Code déjà existant");
-		}		
+				throw new SavePizzaException("Code déjà existant");
+			}
+			
+			
+		}else if (type == 2) {
+			
+			if(!dao.saveNewPizza(new Pizza(code.toUpperCase(), nom, prix, CategoriePizza.SANS_VIANDE))){
+
+				throw new SavePizzaException("Code déjà existant");
+			}
+			
+		}else if (type == 3) {
+			
+			if(!dao.saveNewPizza(new Pizza(code.toUpperCase(), nom, prix, CategoriePizza.POISSON))){
+
+				throw new SavePizzaException("Code déjà existant");
+			}
+			
+		}	
 		
 	}
 }
