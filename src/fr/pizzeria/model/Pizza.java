@@ -2,6 +2,7 @@ package fr.pizzeria.model;
 
 import java.lang.reflect.Field;
 
+
 public class Pizza {
 
 	
@@ -13,7 +14,7 @@ public class Pizza {
 	public String nom;
 	@ToString
 	public double prix;
-	@ToString
+	@ToString 
 	public CategoriePizza categoriePizza ;
 
 	static Integer increment = 0;
@@ -91,33 +92,46 @@ public class Pizza {
 			for(Field f : aClassFields){
 				
 				String name = f.getName();
-				
-				if(f.getAnnotation(ToString.class).uppercase() ){
-					
-					System.out.println("qsdqsddqs");
-				
-				}
-				
 				if(f.isAnnotationPresent(ToString.class)){
-				
-					if(name.equals("code")){
-						sb.append(code  );
-					}
+					
+					if(f.getAnnotation(ToString.class).uppercase() ){
 
-					else if(name.equals("nom")){
-						sb.append(" -> " + nom );
-					}
+						if(name.equals("code")){
+							sb.append(code.toUpperCase()  );
+						}
 
-					else if(name.equals("prix")){
-						sb.append(" ( " + prix + " ) " );
-					}
+						else if(name.equals("nom")){
+							sb.append(" -> " + nom.toUpperCase() );
+						}
 
-					else if(name.equals("categoriePizza")){
-						sb.append(" type : " + categoriePizza);
+						else if(name.equals("prix")){
+							sb.append(" ( " + prix + " ) " );
+						}
+
+						else if(name.equals("categoriePizza")){
+							sb.append(" type : " + categoriePizza);
+						}
+
+					}
+					if (!f.getAnnotation(ToString.class).uppercase()){
+
+						if(name.equals("code")){
+							sb.append(code  );
+						}
+
+						else if(name.equals("nom")){
+							sb.append(" -> " + nom );
+						}
+
+						else if(name.equals("prix")){
+							sb.append(" ( " + prix + " ) " );
+						}
+
+						else if(name.equals("categoriePizza")){
+							sb.append(" type : " + categoriePizza);
+						}
 					}
 				}
-				
-	        	      
 	        }
 			
 		}  catch (ClassNotFoundException e) {
