@@ -1,4 +1,4 @@
-package fr.pizzeria.model;
+package main.java.fr.pizzeria.model;
 
 public enum CategoriePizza {
 	

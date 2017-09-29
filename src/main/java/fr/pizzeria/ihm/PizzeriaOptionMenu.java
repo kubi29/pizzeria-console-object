@@ -1,10 +1,10 @@
-package fr.pizzeria.ihm;
+package main.java.fr.pizzeria.ihm;
 
 import java.util.Scanner;
 
-import fr.pizzeria.exception.DeletePizzaException;
-import fr.pizzeria.exception.SavePizzaException;
-import fr.pizzeria.exception.UpdatePizzaException;
+import main.java.fr.pizzeria.exception.DeletePizzaException;
+import main.java.fr.pizzeria.exception.SavePizzaException;
+import main.java.fr.pizzeria.exception.UpdatePizzaException;
 
 public abstract  class PizzeriaOptionMenu {
 	

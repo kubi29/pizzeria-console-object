@@ -1,9 +1,9 @@
-package fr.pizzeria.ihm;
+package main.java.fr.pizzeria.ihm;
 
 import java.util.Scanner;
 
-import fr.pizzeria.dao.IPizzaDao;
-import fr.pizzeria.model.Pizza;
+import main.java.fr.pizzeria.dao.IPizzaDao;
+import main.java.fr.pizzeria.model.Pizza;
 
 public class ListerPizzasOptionMenu extends PizzeriaOptionMenu {
 	
