@@ -13,7 +13,7 @@ import main.java.fr.pizzeria.ihm.SupprimerPizzaOptionMenu;
 
 public class PizzeriaAdminConsoleApp {
 
-	public static Scanner sc = new Scanner(System.in);
+	public static final  Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub

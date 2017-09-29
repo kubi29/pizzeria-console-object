@@ -50,8 +50,9 @@ public class ModifierPizzaOptionMenu extends PizzeriaOptionMenu {
 						throw new UpdatePizzaException("Le nom doit étre renseigner");
 					}
 					System.out.println("Veuillez saisir le prix");
-					double prix = sc.nextDouble();
-					if(prix == 0){
+					float prix = sc.nextFloat();
+					
+					if(prix == 0f){
 						throw new UpdatePizzaException("Le prix doit étre renseigner");
 					}
 					System.out.println("Veuillez choisir le type");
