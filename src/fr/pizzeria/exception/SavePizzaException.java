@@ -1,4 +1,4 @@
-package main.pizzeria.exception;
+package fr.pizzeria.exception;
 
 public class SavePizzaException extends StockageException  {
 

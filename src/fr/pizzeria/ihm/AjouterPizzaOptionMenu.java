@@ -1,11 +1,11 @@
-package main.pizzeria.ihm;
+package fr.pizzeria.ihm;
 
 import java.util.Scanner;
 
-import main.pizzeria.dao.IPizzaDao;
-import main.pizzeria.exception.SavePizzaException;
-import main.pizzeria.model.CategoriePizza;
-import main.pizzeria.model.Pizza;
+import fr.pizzeria.dao.IPizzaDao;
+import fr.pizzeria.exception.SavePizzaException;
+import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.Pizza;
 
 public class AjouterPizzaOptionMenu extends PizzeriaOptionMenu{
 

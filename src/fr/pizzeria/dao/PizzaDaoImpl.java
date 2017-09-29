@@ -1,10 +1,10 @@
-package main.pizzeria.dao;
+package fr.pizzeria.dao;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import main.pizzeria.model.CategoriePizza;
-import main.pizzeria.model.Pizza;
+import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.Pizza;
 
 public class PizzaDaoImpl implements IPizzaDao {
 	
