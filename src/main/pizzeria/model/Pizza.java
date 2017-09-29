@@ -1,4 +1,4 @@
-package fr.pizzeria.model;
+package main.pizzeria.model;
 
 import java.lang.reflect.Field;
 
@@ -7,7 +7,7 @@ public class Pizza {
 
 	
 	
-	public Integer id
+	public Integer id;
 	@ToString (uppercase = true)
 	public String code;
 	@ToString (uppercase = true)

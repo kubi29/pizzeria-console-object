@@ -1,8 +1,8 @@
-package fr.pizzeria.dao;
+package main.pizzeria.dao;
 
 import java.util.ArrayList;
 
-import fr.pizzeria.model.Pizza;
+import main.pizzeria.model.Pizza;
 
 public interface IPizzaDao   {
 	

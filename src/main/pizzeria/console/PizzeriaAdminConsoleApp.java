@@ -1,15 +1,15 @@
-package fr.pizzeria.console;
+package main.pizzeria.console;
 
 import java.util.Scanner;
 
-import fr.pizzeria.dao.PizzaDaoImpl;
-import fr.pizzeria.exception.DeletePizzaException;
-import fr.pizzeria.exception.SavePizzaException;
-import fr.pizzeria.exception.UpdatePizzaException;
-import fr.pizzeria.ihm.AjouterPizzaOptionMenu;
-import fr.pizzeria.ihm.ListerPizzasOptionMenu;
-import fr.pizzeria.ihm.ModifierPizzaOptionMenu;
-import fr.pizzeria.ihm.SupprimerPizzaOptionMenu;
+import main.pizzeria.dao.PizzaDaoImpl;
+import main.pizzeria.exception.DeletePizzaException;
+import main.pizzeria.exception.SavePizzaException;
+import main.pizzeria.exception.UpdatePizzaException;
+import main.pizzeria.ihm.AjouterPizzaOptionMenu;
+import main.pizzeria.ihm.ListerPizzasOptionMenu;
+import main.pizzeria.ihm.ModifierPizzaOptionMenu;
+import main.pizzeria.ihm.SupprimerPizzaOptionMenu;
 
 public class PizzeriaAdminConsoleApp {
 

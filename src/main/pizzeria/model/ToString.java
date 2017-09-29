@@ -1,4 +1,4 @@
-package fr.pizzeria.model;
+package main.pizzeria.model;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
