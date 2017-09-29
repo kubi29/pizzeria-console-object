@@ -7,7 +7,7 @@ public class Pizza {
 
 	
 	
-	public Integer id;
+	public Integer id
 	@ToString (uppercase = true)
 	public String code;
 	@ToString (uppercase = true)
