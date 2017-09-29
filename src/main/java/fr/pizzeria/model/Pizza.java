@@ -23,7 +23,6 @@ public class Pizza {
 		
 	}
 	
-	
 	public Pizza  String code , String nom , double prix ,CategoriePizza categoriePizza){
 		
 		
