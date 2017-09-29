@@ -23,7 +23,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		int choix = sc.nextInt();
 		
-		PizzaDaoImpl array = new PizzaDaoImpl();
+		PizzaDaoImpl array = new PizzaDaoImpl()
 		
 		
 		do{
