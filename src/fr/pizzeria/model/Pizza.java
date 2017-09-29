@@ -23,7 +23,7 @@ public class Pizza {
 		
 	}
 	
-	public Pizza ( String code , String nom , double prix ,CategoriePizza categoriePizza){
+	public Pizza  String code , String nom , double prix ,CategoriePizza categoriePizza){
 		
 		
 		setId(increment);
