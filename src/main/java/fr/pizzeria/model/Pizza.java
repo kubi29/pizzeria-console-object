@@ -1,11 +1,12 @@
 package main.java.fr.pizzeria.model;
 
 import java.lang.reflect.Field;
+import java.util.logging.Logger;
 
 
 public class Pizza {
 
-	
+	protected static Logger LOGGER= Logger.getLogger("erreur");
 	
 	public Integer id;
 	@ToString (uppercase = true)
@@ -136,9 +137,8 @@ public class Pizza {
 			
 		}  catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(null, "erreur",e);
 		}  
-		
 		return sb.toString();
 
 			

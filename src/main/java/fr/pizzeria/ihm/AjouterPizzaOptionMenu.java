@@ -39,7 +39,7 @@ public class AjouterPizzaOptionMenu extends PizzeriaOptionMenu{
 		System.out.println("Veuillez saisir le prix");
 		float prix = sc.nextFloat();
 	
-		if(prix == 0f){
+		if(prix == 0){
 			throw new SavePizzaException("Le prix doit étre renseigner");
 		}
 		
