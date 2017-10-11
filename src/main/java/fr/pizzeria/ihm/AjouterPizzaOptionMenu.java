@@ -6,10 +6,12 @@ import main.java.fr.pizzeria.dao.IPizzaDao;
 import main.java.fr.pizzeria.exception.SavePizzaException;
 import main.java.fr.pizzeria.model.CategoriePizza;
 import main.java.fr.pizzeria.model.Pizza;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AjouterPizzaOptionMenu extends PizzeriaOptionMenu{
 
-	
+	private static final Logger LOG = LoggerFactory.getLogger(AddPizzaOptionMenu.class);
 	
 	IPizzaDao dao;
 	

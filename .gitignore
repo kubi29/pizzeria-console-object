@@ -2,4 +2,5 @@ target
 .classpath
 .project
 bin
-dependency-reduced-pom.xml
+.settings
+sonarqube-5.6.7
